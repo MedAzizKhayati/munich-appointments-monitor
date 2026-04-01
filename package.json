@@ -1,0 +1,33 @@
+{
+  "name": "munich-appointment-monitor",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Cron-driven Munich appointment availability monitor using API polling",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "job": "tsx src/jobs/runAppointmentCheck.ts",
+    "scheduler": "tsx src/jobs/scheduler.ts",
+    "start": "tsx src/index.ts",
+    "check": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:telegram-live": "tsx scripts/telegramSmoke.ts"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "node-cron": "^4.2.1",
+    "pino": "^10.3.1",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2",
+    "vitest": "^4.1.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
